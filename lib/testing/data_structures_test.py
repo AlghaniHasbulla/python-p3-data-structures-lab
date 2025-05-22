@@ -1,8 +1,16 @@
 #!/usr/bin/env python3
+import pytest
 
-from data_structures import get_names, get_spiciest_foods, print_spicy_foods,\
-                                create_spicy_food, get_spicy_food_by_cuisine, \
-                                print_spiciest_foods, get_average_heat_level
+from lib.data_structures import (
+    get_names,
+    get_spiciest_foods,
+    print_spicy_foods,
+    get_spicy_food_by_cuisine,
+    print_spiciest_foods,
+    average_heat_level,
+    create_spicy_food,
+    spicy_foods,
+)
 
 import io
 import sys
@@ -66,7 +74,7 @@ class TestDataStructures:
 
     def test_get_average_heat_level(self):
         '''contains function get_average_heat_level that returns average of heat_levels in spicy_foods.'''
-        assert(get_average_heat_level(TestDataStructures.SPICY_FOODS) == 6)
+        assert average_heat_level(self.SPICY_FOODS) == 6
 
     def test_create_spicy_food(self):
         '''contains function create_spicy_food that returns original list of spicy_foods with new spicy_food added.'''
